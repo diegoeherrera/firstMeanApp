@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head >
+    <meta charset="utf-8">
+    <title>Contact List App</title>
+    <!-- Boostrapt -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+
+
+  </head>
+  <body  ng-controller="myController">
+    <div class="container">
+      <h1>Contact lista App</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <form class="" action="index.html" method="post">
+          <tr>
+            <td>
+              <input type="text" class="form-control" ng-model="contact.name" required>
+
+            </td>
+            <td>
+              <input type="text" class="form-control" ng-model="contact.mail" required>
+            </td>
+            <td>
+              <input type="text" class="form-control" ng-model="contact.tel" required>
+            </td>
+            <td>
+              <button type="button" class="btn btn-primary"ng-Click="addContact()">Add Contact</button>
+            </td>
+          </tr>
+          </form>
+          <tr ng-repeat="contact in contactList">
+            <td>{{contact.name}}</td>
+            <td>{{contact.mail}}</td>
+            <td>{{contact.tel}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js" charset="utf-8"></script>
+    <script src="controllers/controller.js"></script>
+  </body>
+</html>
