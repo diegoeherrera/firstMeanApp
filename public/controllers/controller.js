@@ -8,6 +8,7 @@ var refresh=function(){
   $http.get('/contactList').success(function(response){
   var contactList;
   $scope.contactList=response;
+  //para limpiar los campos del form despues de que presion add contact
   $scope.contact="";
 
   });
@@ -28,6 +29,19 @@ $scope.addContact= function (){
 };
 
 };
+
+$scope.remove=function(id){
+
+  $http.delete('/contactList/' + id).success(function(response) {
+    refresh();
+  });
+/*
+  $http.delete('/contactList/'+id).success(function(response){
+  refresh();
+  });
+  console.log(id);
+*/
+}
   //Muestra lo que se guardo en la db
   //  console.log("from the db: "+JSON.stringify(response));
 
